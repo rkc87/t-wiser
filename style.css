@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #ffffff; /* White background surrounding the game area */
+    background-color: #393939; /* White background surrounding the game area */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,9 +16,12 @@ body {
 }
 
 #game-wrapper {
-    width: 900px;
-    background-color: #ffffff;
+    width: 80vw;   /* 80% da largura da tela */
+    height: 80vh;  /* 80% da altura da tela */
+    background-color: #00ff48;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Top menu */
@@ -42,7 +45,7 @@ body {
 #main-container {
     display: flex;
     gap: 10px;
-    height: 500px;
+    flex-grow: 1; /* Faz o container crescer para preencher os 80vh */
 }
 
 /* Boxes with Windows 3.1 / DOS border styling */
@@ -135,4 +138,23 @@ body {
 
 .btn.selected {
     border-color: #00aa00; /* Green border matching the magnifying glass in the image */
+}
+/* Disabled button state for Help */
+.btn.disabled {
+    color: #555555;
+    border-color: #555555;
+    opacity: 0.5;
+}
+#controls-hud {
+    font-family: 'VT323', monospace;
+    font-size: 18px; /* Menor que o texto principal */
+    font-weight: bold;
+    color: #00aa00; /* Verde tático, um pouco mais fechado */
+    background-color: #050505; /* Fundo quase preto */
+    text-align: center;
+    padding: 2px 0;
+    margin-top: auto; /* Empurra para o fundo da área de texto */
+    margin-bottom: 10px;
+    border-top: 1px dashed #333;
+    border-bottom: 1px dashed #333;
 }

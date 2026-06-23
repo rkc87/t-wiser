@@ -13,10 +13,7 @@
     <div id="game-wrapper">
         <!-- Top menu resembling the classic Carmen Sandiego interface -->
         <nav id="top-bar">
-            <span><span class="red-letter">G</span>ame</span>
-            <span><span class="red-letter">O</span>ptions</span>
-            <span><span class="red-letter">A</span>cme</span>
-            <span><span class="red-letter">D</span>ossiers</span>
+            <p>True Wiser - Company Onboarding Version</p>
         </nav>
 
         <main id="main-container">
@@ -37,26 +34,101 @@
             <!-- Right Panel: Operations Terminal -->
             <section id="right-panel" class="retro-box">
                 <div id="text-terminal">
-                    <p>Mateo's family reunion is starting, but he is standing outside the venue looking panicked. His physical card is missing.</p>
-                    <br>
-                    <p>CHOOSE AN OPTION BELOW:</p>
                     
-                    <!-- Interactive terminal-style menu -->
-                    <ul id="action-menu">
-                        <li class="menu-option active" data-action="A">Deploy Agent A (Pink) to Check Catering</li>
-                        <li class="menu-option" data-action="B">Deploy Agent B (Blue) to Check Luggage</li>
-                        <li class="menu-option" data-action="C">Deploy Agent C (Yellow) to Check Pockets</li>
-                        <li class="menu-option" data-action="D">Deploy Agent D (Green) to Analyze App</li>
-                        <li class="menu-option" data-action="I">Intervene and Resolve Crisis</li>
-                    </ul>
+                    <div id="case-header" style="border-bottom: 1px solid #00ff00; margin-bottom: 15px; padding-bottom: 5px; display: none;">
+                        <span id="case-title-display" style="color: #00ff00; font-weight: bold; font-size: 1.1em;"></span>
+                    </div>
+
+                    <div id="boot-section">
+                        <p style="color: #9FE870; background-color: #163300; display: inline-block; padding: 2px 5px;"> [ SYSTEM BOOTING... ] </p>
+                        <br><br>
+                        <p style="color: white; background-color: #8B0000; display: inline-block; padding: 2px 5px;"> ⚠️ SYSTEM OVERRIDE REQUIRED ⚠️ </p>
+                        <br><br>
+                                                <p>To initialize your session, please enter your <span style="color: #ffd700;">TEAM NAME</span>:</p>
+                        <br>
+                        <p id="team-input" class="active">> _</p>
+                    </div>
+
+                    <div id="override-section" style="display: none;">
+                        <p style="color: white; background-color: #8B0000; display: inline-block; padding: 2px 5px;"> 🔒 SECURITY OVERRIDE REQUIRED 🔒 </p>
+                        <br><br>
+                        <p>Before we expose you to live client data, security protocols demand a final verification.</p>
+                        <br>
+                        <p>Please enter the <span style="color: #ffd700;">INSTRUCTOR OVERRIDE CODE</span>:</p>
+                        <br>
+                        <p id="override-input" class="active">> _</p>
+                    </div>
+
+                    <div id="level-select-section" style="display: none;">
+                        <p style="color: #ff3333;">[ INSTRUCTOR OVERRIDE ACCEPTED ]</p>
+                        <br>
+                        <p>Which Challenge Number (1-7) will you tackle?</p>
+                        <br>
+                        <p id="level-input" class="active">> _</p>
+                    </div>
+
+                    <div id="profiling-section" style="display: none;">
+                        <p style="color: #00ffe5;">[ CORE INTELLIGENCE: INCIDENT TRIAGE ]</p>
+                        <br>
+                        <p id="profile-text"></p>
+                        <br>
+                        <p>IDENTIFY THE TARGET:</p>
+                        <ul id="profiling-menu">
+                            <li class="menu-option active" data-id="1">1: International Account User</li>
+                            <li class="menu-option" data-id="2">2: Remitter</li>
+                            <li class="menu-option" data-id="3">3: Travel Spender</li>
+                            <li class="menu-option" data-id="4">4: Domestic Account User</li>
+                            <li class="menu-option" data-id="5">5: General Money Sender</li>
+                            <li class="menu-option" data-id="6">6: Local Spender</li>
+                            <li class="menu-option" data-id="7">7: Money Manager</li>
+                        </ul>
+                    </div>
+
+                    <div id="investigate-section" style="display: none;">
+                        <p id="narrative-text"></p>
+                        <br>
+                        <div id="menu-container">
+                            <p>CHOOSE AN OPTION BELOW:</p>
+                            <ul id="action-menu"></ul>
+                        </div>
+                        
+                        <div id="clue-container" style="display: none;">
+                            <p style="color: #00ffff;">[ 🌐 SECURE UPLINK ESTABLISHED ]</p>
+                            <br>
+                            <p id="clue-text"></p>
+                            <br><br>
+                            <p style="color: #ffd700;">💡 After collecting all four data fragments, navigate to the INTERVENE tab (right arrow) to solve the case.</p>
+                            <br>
+                            <p id="clue-prompt" class="active" style="display: none; color: #ff3333;">> PRESS ENTER TO RETURN TO MENU</p>
+                        </div>
+                    </div>
+
+                    <div id="intervene-section" style="display: none;">
+                        <p style="color: #ff8c00;">[ SYSTEM OVERRIDE ACTIVE ]</p>
+                        <br>
+                        <p>Enter the ACCESS CODE (Wise Feature) to resolve the crisis:</p>
+                        <br>
+                        <p id="access-code-input" class="active">> _</p>
+                    </div>
+
+                    <div id="postmortem-section" style="display: none;">
+                        <p style="color: #00ff00;">[ CASE CLOSED ]</p>
+                        <br>
+                        <p id="intervention-text" style="color: #ffd700;"></p>
+                        <br>
+                        <p id="postmortem-text"></p>
+                        <br>
+                        <p id="postmortem-prompt" class="active" style="display: none;">> PRESS ENTER FOR NEXT CASE</p>
+                    </div>
+
                 </div>
-                
-                <!-- Classic bottom buttons (Decorative for aesthetic purposes) -->
+                <div id="controls-hud">
+                    [ NAV: ↑↓ SELECT  |  ENTER: CONFIRM  |  ←→ TABS ]
+                </div>
                 <div id="bottom-buttons">
-                    <div class="btn">SEE</div>
-                    <div class="btn">DEPART</div>
-                    <div class="btn selected">🔎</div>
-                    <div class="btn">CRIME</div>
+                    <div class="btn tab-btn selected" id="tab-investigate">INVESTIGATE</div>
+                    <div class="btn tab-btn" id="tab-intervene">INTERVENE</div>
+                    <div class="btn tab-btn disabled" id="tab-help">HELP</div>
                 </div>
             </section>
         </main>
