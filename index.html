@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wiser Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-wrapper">
+        <!-- Top menu resembling the classic Carmen Sandiego interface -->
+        <nav id="top-bar">
+            <span><span class="red-letter">G</span>ame</span>
+            <span><span class="red-letter">O</span>ptions</span>
+            <span><span class="red-letter">A</span>cme</span>
+            <span><span class="red-letter">D</span>ossiers</span>
+        </nav>
+
+        <main id="main-container">
+            <!-- Left Panel: Graphic Display -->
+            <section id="left-panel">
+                <div id="location-box" class="retro-box">
+                    <p id="location-name">Tuscany</p>
+                    <p id="location-time">Thursday, 12 p.m.</p>
+                </div>
+                <div id="image-box" class="retro-box">
+                    <!-- Placeholder for future AI-generated location images -->
+                    <div id="scene-image">
+                        <p>[ LOCATION IMAGE ]</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Operations Terminal -->
+            <section id="right-panel" class="retro-box">
+                <div id="text-terminal">
+                    <p>Mateo's family reunion is starting, but he is standing outside the venue looking panicked. His physical card is missing.</p>
+                    <br>
+                    <p>CHOOSE AN OPTION BELOW:</p>
+                    
+                    <!-- Interactive terminal-style menu -->
+                    <ul id="action-menu">
+                        <li class="menu-option active" data-action="A">Deploy Agent A (Pink) to Check Catering</li>
+                        <li class="menu-option" data-action="B">Deploy Agent B (Blue) to Check Luggage</li>
+                        <li class="menu-option" data-action="C">Deploy Agent C (Yellow) to Check Pockets</li>
+                        <li class="menu-option" data-action="D">Deploy Agent D (Green) to Analyze App</li>
+                        <li class="menu-option" data-action="I">Intervene and Resolve Crisis</li>
+                    </ul>
+                </div>
+                
+                <!-- Classic bottom buttons (Decorative for aesthetic purposes) -->
+                <div id="bottom-buttons">
+                    <div class="btn">SEE</div>
+                    <div class="btn">DEPART</div>
+                    <div class="btn selected">🔎</div>
+                    <div class="btn">CRIME</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
