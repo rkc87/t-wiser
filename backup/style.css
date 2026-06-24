@@ -1,0 +1,160 @@
+/* Basic reset and typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #393939; /* White background surrounding the game area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'VT323', monospace; /* MS-DOS style font */
+    font-size: 24px;
+}
+
+#game-wrapper {
+    width: 80vw;   /* 80% da largura da tela */
+    height: 80vh;  /* 80% da altura da tela */
+    background-color: #00ff48;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top menu */
+#top-bar {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+#top-bar span {
+    margin-right: 20px;
+    color: black;
+}
+
+.red-letter {
+    color: #cc0000;
+    text-decoration: underline;
+}
+
+/* Main container split into two panels */
+#main-container {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1; /* Faz o container crescer para preencher os 80vh */
+}
+
+/* Boxes with Windows 3.1 / DOS border styling */
+.retro-box {
+    background-color: black;
+    color: white;
+    border: 4px solid black;
+    outline: 3px solid white;
+    box-shadow: 0 0 0 6px black; /* Creates the thick double border effect */
+}
+
+/* Left Panel */
+#left-panel {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing to simulate separate borders */
+}
+
+#location-box {
+    text-align: center;
+    padding: 10px;
+}
+
+#image-box {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a; /* Dark gray for the image area */
+    overflow: hidden;
+}
+
+#scene-image p {
+    color: #00ff00; /* Terminal green */
+}
+
+/* Right Panel */
+#right-panel {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    position: relative;
+}
+
+#text-terminal {
+    flex-grow: 1;
+    line-height: 1.2;
+}
+
+/* Action Menu (Keyboard Navigable) */
+#action-menu {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.menu-option {
+    color: white;
+    padding: 2px 0;
+}
+
+/* The cursor indicating the selected option */
+.menu-option.active {
+    color: #ffd700; /* Gold yellow matching your original prompt */
+}
+
+.menu-option.active::before {
+    content: "> ";
+    font-weight: bold;
+}
+
+/* Bottom buttons mimicking the Carmen Sandiego UI */
+#bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-top: 2px solid white;
+    padding-top: 10px;
+}
+
+.btn {
+    background-color: white;
+    color: blue;
+    border: 3px solid black;
+    padding: 5px 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn.selected {
+    border-color: #00aa00; /* Green border matching the magnifying glass in the image */
+}
+/* Disabled button state for Help */
+.btn.disabled {
+    color: #555555;
+    border-color: #555555;
+    opacity: 0.5;
+}
+#controls-hud {
+    font-family: 'VT323', monospace;
+    font-size: 18px; /* Menor que o texto principal */
+    font-weight: bold;
+    color: #00aa00; /* Verde tático, um pouco mais fechado */
+    background-color: #050505; /* Fundo quase preto */
+    text-align: center;
+    padding: 2px 0;
+    margin-top: auto; /* Empurra para o fundo da área de texto */
+    margin-bottom: 10px;
+    border-top: 1px dashed #333;
+    border-bottom: 1px dashed #333;
+}

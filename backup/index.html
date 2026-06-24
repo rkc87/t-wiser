@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wiser Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-wrapper">
+        <!-- Top menu resembling the classic Carmen Sandiego interface -->
+        <nav id="top-bar">
+            <p>True Wiser - Company Onboarding Version</p>
+        </nav>
+
+        <main id="main-container">
+            <!-- Left Panel: Graphic Display -->
+            <section id="left-panel">
+                <div id="location-box" class="retro-box">
+                    <p id="location-name">Tuscany</p>
+                    <p id="location-time">Thursday, 12 p.m.</p>
+                </div>
+                <div id="image-box" class="retro-box">
+                    <!-- Placeholder for future AI-generated location images -->
+                    <div id="scene-image">
+                        <p>[ LOCATION IMAGE ]</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Operations Terminal -->
+            <section id="right-panel" class="retro-box">
+                <div id="text-terminal">
+                    <div id="case-header" style="border-bottom: 1px solid #00ff00; margin-bottom: 15px; padding-bottom: 5px; display: none;">
+                        <span id="case-title-display" style="color: #00ff00; font-weight: bold; font-size: 1.1em;"></span>
+                    </div>
+                    <div id="level-select-section" style="display: none;">
+                        <p style="color: #ff3333;">[ INSTRUCTOR OVERRIDE ACCEPTED ]</p>
+                        <br>
+                        <p>Which Challenge Number (1-7) will you tackle?</p>
+                        <br>
+                        <p id="level-input" class="active">> _</p>
+                    </div>
+
+                    <div id="profiling-section" style="display: none;">
+                        <p style="color: #00ffe5;">[ CORE INTELLIGENCE: INCIDENT TRIAGE ]</p>
+                        <br>
+                        <p id="profile-text">Texto do perfil do cliente...</p>
+                        <br>
+                        <p>IDENTIFY THE TARGET:</p>
+                        <ul id="profiling-menu">
+                            <li class="menu-option active" data-id="1">1: International Account User</li>
+                            <li class="menu-option" data-id="2">2: Remitter</li>
+                            <li class="menu-option" data-id="3">3: Travel Spender</li>
+                            <li class="menu-option" data-id="4">4: Domestic Account User</li>
+                            <li class="menu-option" data-id="5">5: General Money Sender</li>
+                            <li class="menu-option" data-id="6">6: Local Spender</li>
+                            <li class="menu-option" data-id="7">7: Money Manager</li>
+                        </ul>
+                    </div>
+
+                    <div id="investigate-section" style="display: none;">
+                        <p id="narrative-text">Carregando dados do sistema...</p>
+                        <br>
+                        <div id="menu-container">
+                            <p>CHOOSE AN OPTION BELOW:</p>
+                            <ul id="action-menu"></ul>
+                        </div>
+                        <div id="clue-container" style="display: none;">
+                            <p style="color: #00ffff;">[ 🌐 SECURE UPLINK ESTABLISHED ]</p>
+                            <br>
+                            <p id="clue-text"></p>
+                            <br>
+                            <p id="clue-prompt" class="active" style="display: none;">> PRESS ENTER TO RETURN</p>
+                        </div>
+                    </div>
+
+                    <div id="intervene-section" style="display: none;">
+                        <p style="color: #ff8c00;">[ SYSTEM OVERRIDE ACTIVE ]</p>
+                        <br>
+                        <p>Enter the ACCESS CODE (Wise Feature) to resolve the crisis:</p>
+                        <br>
+                        <p id="access-code-input" class="active">> _</p>
+                    </div>
+
+                    <div id="postmortem-section" style="display: none;">
+                        <p style="color: #00ff00;">[ CASE CLOSED ]</p>
+                        <br>
+                        <p id="intervention-text" style="color: #ffd700;"></p>
+                        <br>
+                        <p id="postmortem-text"></p>
+                        <br>
+                        <p id="postmortem-prompt" class="active" style="display: none;">> PRESS ENTER FOR NEXT CASE</p>
+                    </div>
+
+                </div>
+                <div id="controls-hud">
+                    [ NAV: ↑↓ SELECT  |  ENTER: CONFIRM  |  ←→ TABS ]
+                </div>
+                <div id="bottom-buttons">
+                    <div class="btn tab-btn selected" id="tab-investigate">INVESTIGATE</div>
+                    <div class="btn tab-btn" id="tab-intervene">INTERVENE</div>
+                    <div class="btn tab-btn disabled" id="tab-help">HELP</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
