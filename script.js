@@ -94,22 +94,41 @@ document.addEventListener("DOMContentLoaded", () => {
         currentTypingCallback = onComplete;
         element.textContent = "";
         element.setAttribute("data-full-text", text); 
+        
+        const terminalContainer = document.getElementById("text-terminal");
+        
         let i = 0;
         clearInterval(typeInterval);
+        
         typeInterval = setInterval(() => {
             element.textContent += text.charAt(i);
             i++;
+            
+            // Empurra a tela para baixo a cada nova letra (Efeito MS-DOS)
+            if (terminalContainer) {
+                terminalContainer.scrollTop = terminalContainer.scrollHeight;
+            }
+
             if (i >= text.length) finishTyping();
         }, speed);
     }
 
     function finishTyping() {
         clearInterval(typeInterval);
-        if (currentTypingElement) currentTypingElement.textContent = currentTypingElement.getAttribute("data-full-text");
+        if (currentTypingElement) {
+            currentTypingElement.textContent = currentTypingElement.getAttribute("data-full-text");
+        }
         isTyping = false;
         let cb = currentTypingCallback;
         currentTypingElement = null;
         currentTypingCallback = null;
+        
+        // Garante que a tela esteja no final quando o jogador pular a animação com Enter
+        const terminalContainer = document.getElementById("text-terminal");
+        if (terminalContainer) {
+            terminalContainer.scrollTop = terminalContainer.scrollHeight;
+        }
+
         if (cb) cb();
     }
 

@@ -111,6 +111,28 @@ body {
 #text-terminal {
     flex-grow: 1;
     line-height: 1.2;
+    overflow-y: auto; /* Permite rolagem vertical */
+    min-height: 0;    /* Trava o crescimento do bloco no limite do painel */
+    padding-right: 10px; /* Dá um respiro para a barra de rolagem não colar no texto */
+}
+
+/* --- Old-School Terminal Scrollbar --- */
+#text-terminal::-webkit-scrollbar {
+    width: 12px;
+}
+
+#text-terminal::-webkit-scrollbar-track {
+    background: #000;
+    border-left: 2px solid #333;
+}
+
+#text-terminal::-webkit-scrollbar-thumb {
+    background: #00ff00; /* Verde terminal combinando com o tema */
+    border: 1px solid #000;
+}
+
+#text-terminal::-webkit-scrollbar-thumb:hover {
+    background: #9fe870;
 }
 
 /* Action Menu (Keyboard Navigable) */
