@@ -11,27 +11,21 @@
 </head>
 <body>
     <div id="game-wrapper">
-        <!-- Top menu resembling the classic Carmen Sandiego interface -->
         <nav id="top-bar">
-            <p>True Wiser - Company Onboarding Version</p>
+            <p>Team: <span id="display-team-name">N/A</span> | Solved: <span id="solved-counter">0/7</span> | Key: <span id="session-key-display">None</span></p>
         </nav>
 
         <main id="main-container">
-            <!-- Left Panel: Graphic Display -->
             <section id="left-panel">
-                <div id="location-box" class="retro-box">
-                    <p id="location-name">Tuscany</p>
-                    <p id="location-time">Thursday, 12 p.m.</p>
+                <div id="location-box" class="retro-box" style="display: none;">
+                    <p id="location-name"></p>
+                    <p id="location-time"></p>
                 </div>
                 <div id="image-box" class="retro-box">
-                    <!-- Placeholder for future AI-generated location images -->
-                    <div id="scene-image">
-                        <p>[ LOCATION IMAGE ]</p>
-                    </div>
+                    <img id="display-image" src="images/welcome.png" alt="Terminal Display">
                 </div>
             </section>
 
-            <!-- Right Panel: Operations Terminal -->
             <section id="right-panel" class="retro-box">
                 <div id="text-terminal">
                     
@@ -42,11 +36,29 @@
                     <div id="boot-section">
                         <p style="color: #9FE870; background-color: #163300; display: inline-block; padding: 2px 5px;"> [ SYSTEM BOOTING... ] </p>
                         <br><br>
-                        <p style="color: white; background-color: #8B0000; display: inline-block; padding: 2px 5px;"> ⚠️ SYSTEM OVERRIDE REQUIRED ⚠️ </p>
-                        <br><br>
-                                                <p>To initialize your session, please enter your <span style="color: #ffd700;">TEAM NAME</span>:</p>
+                        <p>Welcome to True Wiser Core. To initialize your operations terminal, please enter your <span style="color: #ffd700;">TEAM NAME</span>:</p>
                         <br>
                         <p id="team-input" class="active">> _</p>
+                    </div>
+
+                    <div id="intro-section" style="display: none;">
+                        <p style="color: #9FE870; font-weight: bold;">[ TRUE WISER OPERATIONS CORE ENGAGED ]</p>
+                        <br>
+                        <p id="intro-text"></p>
+                        <br>
+                        <p id="intro-prompt" class="active" style="display: none; color: #ffd700;">> PRESS ENTER TO START SYSTEM CALIBRATION</p>
+                    </div>
+
+                    <!-- SEÇÃO DE ESCOLHA DE DIFICULDADE (NÍVEIS 1, 2, 3) -->
+                    <div id="difficulty-select-section" style="display: none;">
+                        <p style="color: #ff8c00;">[ CALIBRATION TACTICAL CONFIGURATION ]</p>
+                        <br>
+                        <p>Select Difficulty Level (1, 2, or 3):</p>
+                        <ul id="difficulty-menu">
+                            <li class="menu-option active" data-difficulty="1">1: Generalist (Sequential Clues)</li>
+                            <li class="menu-option" data-difficulty="2">2: Specialist (Word-Scrambled Clues)</li>
+                            <li class="menu-option" data-difficulty="3">3: Hardcore CS (Encrypted Anagrams)</li>
+                        </ul>
                     </div>
 
                     <div id="override-section" style="display: none;">
@@ -121,6 +133,22 @@
                         <p id="postmortem-prompt" class="active" style="display: none;">> PRESS ENTER FOR NEXT CASE</p>
                     </div>
 
+                    <div id="password-section" style="display: none;">
+                        <p style="color: #ff3333;">[ SESSION RECOVERY PROTOCOL ]</p>
+                        <br>
+                        <p>Enter your coded SESSION KEY to restore your previous state.</p>
+                        <br>
+                        <p id="recovery-input" class="active">> _</p>
+                    </div>
+
+                    <div id="game-over-section" style="display: none;">
+                        <p style="color: #00ff00; font-size: 2em; font-weight: bold;">[ MISSION ACCOMPLISHED ]</p>
+                        <br>
+                        <p>All active crises intercepted and solved.</p>
+                        <br>
+                        <p id="end-text"></p>
+                    </div>
+
                 </div>
                 <div id="controls-hud">
                     [ NAV: ↑↓ SELECT  |  ENTER: CONFIRM  |  ←→ TABS ]
@@ -128,7 +156,7 @@
                 <div id="bottom-buttons">
                     <div class="btn tab-btn selected" id="tab-investigate">INVESTIGATE</div>
                     <div class="btn tab-btn" id="tab-intervene">INTERVENE</div>
-                    <div class="btn tab-btn disabled" id="tab-help">HELP</div>
+                    <div class="btn tab-btn" id="tab-password">PASSWORD</div>
                 </div>
             </section>
         </main>
